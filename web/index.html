@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Havenwood - a cerebral restoration puzzle adventure.">
+  <meta name="theme-color" content="#070B13">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Havenwood">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Havenwood</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #070B13;
+    }
+    #haven-loader {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 38%, rgba(243, 200, 107, 0.09), transparent 42%),
+        linear-gradient(145deg, #152238 0%, #070B13 68%);
+      color: #F7F2E7;
+      font-family: Georgia, 'Times New Roman', serif;
+      animation: haven-fade 0.8s ease 3s forwards;
+    }
+    #haven-loader img {
+      width: 78px;
+      height: 78px;
+      border-radius: 22px;
+      box-shadow: 0 0 48px rgba(243, 200, 107, 0.18);
+    }
+    #haven-loader .name {
+      font-size: 22px;
+      letter-spacing: 0.32em;
+      text-indent: 0.32em;
+      color: #F7F2E7;
+    }
+    #haven-loader .note {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.24em;
+      text-indent: 0.24em;
+      color: rgba(147, 163, 191, 0.75);
+    }
+    #haven-loader .line {
+      width: 116px;
+      height: 2px;
+      overflow: hidden;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    #haven-loader .line::after {
+      content: '';
+      display: block;
+      width: 46px;
+      height: 100%;
+      border-radius: 4px;
+      background: linear-gradient(90deg, transparent, #F3C86B, transparent);
+      animation: haven-load 1.4s ease-in-out infinite;
+    }
+    @keyframes haven-load {
+      from { transform: translateX(-52px); }
+      to { transform: translateX(124px); }
+    }
+    @keyframes haven-fade {
+      to { opacity: 0; visibility: hidden; }
+    }
+  </style>
+</head>
+<body>
+  <div id="haven-loader">
+    <img src="icons/Icon-192.png" alt="">
+    <div class="name">HAVENWOOD</div>
+    <div class="line"></div>
+    <div class="note">RESTORING THE MANOR</div>
+  </div>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
